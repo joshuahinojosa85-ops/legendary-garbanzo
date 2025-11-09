@@ -4,46 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Neural Nexus Systems</title>
-  <!-- Auto-generated glowing favicon -->
-<script>
-(function() {
-  const canvas = document.createElement("canvas");
-  canvas.width = 64;
-  canvas.height = 64;
-  const ctx = canvas.getContext("2d");
-
-  // background
-  ctx.fillStyle = "#000";
-  ctx.fillRect(0, 0, 64, 64);
-
-  // neon circle glow
-  const gradient = ctx.createRadialGradient(32, 32, 5, 32, 32, 20);
-  gradient.addColorStop(0, "#00ffff");
-  gradient.addColorStop(1, "rgba(0,255,255,0)");
-  ctx.fillStyle = gradient;
-  ctx.beginPath();
-  ctx.arc(32, 32, 20, 0, Math.PI * 2);
-  ctx.fill();
-
-  // outer ring
-  ctx.strokeStyle = "#00ffff";
-  ctx.lineWidth = 2;
-  ctx.shadowColor = "#00ffff";
-  ctx.shadowBlur = 15;
-  ctx.beginPath();
-  ctx.arc(32, 32, 22, 0, Math.PI * 2);
-  ctx.stroke();
-
-  // attach favicon dynamically
-  const link = document.createElement("link");
-  link.rel = "icon";
-  link.href = canvas.toDataURL("image/png");
-  document.head.appendChild(link);
-})();
-</script>
-
   <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/script.js" defer></script>
+
+  <!-- Auto-generated glowing favicon -->
+  <script>
+  (function() {
+    const canvas = document.createElement("canvas");
+    canvas.width = 64;
+    canvas.height = 64;
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#000";
+    ctx.fillRect(0, 0, 64, 64);
+    const gradient = ctx.createRadialGradient(32, 32, 5, 32, 32, 20);
+    gradient.addColorStop(0, "#00ffff");
+    gradient.addColorStop(1, "rgba(0,255,255,0)");
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
+    ctx.arc(32, 32, 20, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = "#00ffff";
+    ctx.lineWidth = 2;
+    ctx.shadowColor = "#00ffff";
+    ctx.shadowBlur = 15;
+    ctx.beginPath();
+    ctx.arc(32, 32, 22, 0, Math.PI * 2);
+    ctx.stroke();
+    const link = document.createElement("link");
+    link.rel = "icon";
+    link.href = canvas.toDataURL("image/png");
+    document.head.appendChild(link);
+  })();
+  </script>
 </head>
+
 <body>
   <header>
     <img src="assets/images/neuralnexus-logo.png" alt="Neural Nexus Logo" />
@@ -101,9 +95,7 @@
   </section>
 
   <footer>
-    &copy; 2025 Neural Nexus Systems | Unauthorized Access Detected... Just Kidding.
+    <p>&copy; 2025 Neural Nexus Systems | Unauthorized Access Detected... Just Kidding.</p>
   </footer>
-
-  <script src="assets/js/script.js"></script>
 </body>
-</ht
+</html>
