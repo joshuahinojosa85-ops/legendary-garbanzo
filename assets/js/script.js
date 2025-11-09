@@ -110,3 +110,19 @@ toggle.addEventListener("click", () => {
   toggle.classList.toggle("off");
   toggle.innerHTML = trailEnabled ? "⚡" : "✖";
 });
+// ===== Neural Nexus UI Ping Sound =====
+document.addEventListener("DOMContentLoaded", () => {
+  const ping = new Audio("assets/sounds/ui-ping.mp3");
+  ping.volume = 0.3; // soft and subtle
+
+  // Select all nav links + return buttons
+  const interactiveLinks = document.querySelectorAll("a, button, .main-node-btn");
+
+  interactiveLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      // Clone audio so rapid clicks don't cut it off
+      const playPing = ping.cloneNode();
+      playPing.play().catch(() => {});
+    });
+  });
+});
