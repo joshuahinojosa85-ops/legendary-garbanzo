@@ -6,15 +6,19 @@
   <title>Neural Nexus</title>
 
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-  <meta property="og:image" content="assets/images/neuralnexus-emblem.png">
   <meta name="description" content="Neural Nexus — Connecting minds and machines through cybersecurity, computing, and innovation.">
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
       background-color: #0e0e0e;
       color: #e0e0e0;
+      overflow-x: hidden;
     }
 
     header {
@@ -24,11 +28,20 @@
       align-items: center;
       padding: 15px 50px;
       border-bottom: 2px solid #00e0ff;
+      box-shadow: 0 0 10px #00e0ff33;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .logo {
       height: 45px;
       width: auto;
+      transition: filter 0.4s ease;
+    }
+
+    .logo:hover {
+      filter: drop-shadow(0 0 10px #00e0ff);
     }
 
     nav a {
@@ -36,17 +49,20 @@
       text-decoration: none;
       margin-left: 20px;
       font-weight: 500;
-      transition: color 0.3s ease;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
     }
 
     nav a:hover {
       color: #00e0ff;
+      text-shadow: 0 0 8px #00e0ff;
     }
 
     .hero {
+      position: relative;
       text-align: center;
-      padding: 100px 20px;
-      background: linear-gradient(135deg, #121212, #0a0a0a);
+      padding: 120px 20px;
+      background: radial-gradient(circle at top, #111 0%, #0a0a0a 100%);
+      overflow: hidden;
     }
 
     .hero-emblem {
@@ -61,13 +77,17 @@
       to { filter: drop-shadow(0 0 15px #00ffff); }
     }
 
-    .hero h2 {
-      color: #00e0ff;
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+    .floating-particle {
+      position: absolute;
+      background-color: #00e0ff55;
+      border-radius: 50%;
+      animation: float 8s infinite ease-in-out;
     }
 
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto
+    @keyframes float {
+      0% { transform: translateY(0px) scale(1); opacity: 0.5; }
+      50% { transform: translateY(-20px) scale(1.2); opacity: 0.8; }
+      100% { transform: translateY(0px) scale(1); opacity: 0.5; }
+    }
+
+    .hero h2 {
