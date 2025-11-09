@@ -1,4 +1,4 @@
-/* ===== Neural Nexus Systems | Dark-Tech Aesthetic ===== */
+/* ===== Neural Nexus Systems | Dark-Tech Core Style ===== */
 
 * {
   margin: 0;
@@ -6,27 +6,6 @@
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
-}
-body {
-  background: #000;
-  color: #cfcfcf;     /* light gray text */
-}
-
-h1, h2, h3 {
-  color: #00ffff;     /* cyan headings */
-}
-p, li, span {
-  color: #cfcfcf;
-}
-
-.logo {
-  width: 140px;
-  filter: drop-shadow(0 0 15px #00ffffcc);
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease;
-}
-.logo:hover {
-  transform: scale(1.05);
 }
 
 /* ===== Base ===== */
@@ -37,7 +16,7 @@ body {
   position: relative;
 }
 
-/* ===== Animated background grid ===== */
+/* ===== Animated Background Grid ===== */
 body::before {
   content: "";
   position: fixed;
@@ -71,10 +50,14 @@ header {
   100% { border-color: #00ffff80; box-shadow: 0 0 25px #00ffff50; }
 }
 
-header img {
-  width: 120px;
+.logo {
+  width: 140px;
   margin-bottom: 1rem;
-  filter: drop-shadow(0 0 15px #00ffff80);
+  filter: drop-shadow(0 0 15px #00ffffcc);
+  transition: transform 0.3s ease;
+}
+.logo:hover {
+  transform: scale(1.05);
 }
 
 header h1 {
@@ -135,6 +118,12 @@ h2 {
   text-shadow: 0 0 10px #00ffff;
 }
 
+p {
+  color: #cfcfcf;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
 /* ===== Services ===== */
 .service-grid {
   display: grid;
@@ -152,20 +141,6 @@ h2 {
   position: relative;
   overflow: hidden;
 }
-.service-card::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(0,255,255,0.1) 0%, transparent 60%);
-  transform: scale(0);
-  transition: transform 0.5s ease;
-}
-.service-card:hover::before {
-  transform: scale(1);
-}
 .service-card:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 0 25px #00ffff80;
@@ -176,84 +151,7 @@ h2 {
   margin-bottom: 1rem;
 }
 
-/* ===== Team Section ===== */
-.team-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-.member {
-  background: #111;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #00ffff30;
-  width: 250px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.member:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 20px #00ffff80;
-}
-.member h3 {
-  color: #00ffff;
-  margin-bottom: 0.5rem;
-}
-
-/* ===== Blockquote / Motto ===== */
-blockquote {
-  font-style: italic;
-  color: #a0a0a0;
-  margin-top: 3rem;
-  border-left: 4px solid #00ffff;
-  padding-left: 1rem;
-  text-shadow: 0 0 6px #00ffff40;
-}
-blockquote span {
-  display: block;
-  color: #00ffff;
-  margin-top: 0.5rem;
-}
-
-/* ===== Contact ===== */
-.contact a {
-  color: #00ffff;
-  text-decoration: none;
-  transition: text-shadow 0.3s;
-}
-.contact a:hover {
-  text-shadow: 0 0 10px #00ffff;
-}
-
-/* ===== Footer ===== */
-footer {
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  color: #666;
-  border-top: 1px solid #111;
-  background: #0b0b0b;
-  position: relative;
-  z-index: 2;
-  box-shadow: inset 0 0 20px #00ffff15;
-}
-footer p {
-  color: #9f9f9f;
-}
-
-/* ===== Animation triggers ===== */
-[data-animate] {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 1s ease;
-}
-[data-animate].visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-  /* ===== Contact Form ===== */
+/* ===== Contact Form ===== */
 form {
   margin-top: 2rem;
   display: flex;
@@ -300,12 +198,26 @@ button:hover {
   transform: translateY(-2px);
 }
 
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #111;
+  background: #0b0b0b;
+  position: relative;
+  z-index: 2;
+  box-shadow: inset 0 0 20px #00ffff15;
 }
 
-/* ===== Hover Glows & Focus ===== */
-a, button, .service-card {
-  outline: none;
+/* ===== Fade-in Animation ===== */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1.2s ease;
 }
-a:focus, button:focus, .service-card:focus {
-  box-shadow: 0 0 12px #00ffff;
+[data-animate].visible {
+  opacity: 1;
+  transform: translateY(0);
 }
