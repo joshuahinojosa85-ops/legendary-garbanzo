@@ -7,6 +7,15 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
 }
+.logo {
+  width: 140px;
+  filter: drop-shadow(0 0 15px #00ffffcc);
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+.logo:hover {
+  transform: scale(1.05);
+}
 
 /* ===== Base ===== */
 body {
