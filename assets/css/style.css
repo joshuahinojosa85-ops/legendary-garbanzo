@@ -1,223 +1,62 @@
-/* ===== Neural Nexus Systems | Dark-Tech Core Style ===== */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  scroll-behavior: smooth;
-}
-
-/* ===== Base ===== */
-body {
-  background: radial-gradient(circle at top, #050505 0%, #000 100%);
-  color: #cfcfcf;
-  overflow-x: hidden;
-  position: relative;
-}
-
-/* ===== Animated Background Grid ===== */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(90deg, rgba(0,255,255,0.05) 0px, rgba(0,255,255,0.05) 1px, transparent 1px, transparent 80px),
-              repeating-linear-gradient(0deg, rgba(0,255,255,0.05) 0px, rgba(0,255,255,0.05) 1px, transparent 1px, transparent 80px);
-  animation: gridmove 25s linear infinite;
-  z-index: 0;
-}
-@keyframes gridmove {
-  from { background-position: 0 0, 0 0; }
-  to { background-position: 80px 80px, 80px 80px; }
-}
-
-/* ===== Header ===== */
-header {
-  text-align: center;
-  padding: 2rem 1rem;
-  background: linear-gradient(90deg, #0b0b0b, #101010);
-  box-shadow: 0 0 20px #00ffff20;
-  position: relative;
-  z-index: 2;
-  border-bottom: 2px solid #00ffff30;
-  animation: borderPulse 6s infinite alternate;
-}
-@keyframes borderPulse {
-  0% { border-color: #00ffff10; box-shadow: 0 0 10px #00ffff20; }
-  100% { border-color: #00ffff80; box-shadow: 0 0 25px #00ffff50; }
-}
-
-.logo {
-  width: 140px;
-  margin-bottom: 1rem;
-  filter: drop-shadow(0 0 15px #00ffffcc);
-  transition: transform 0.3s ease;
-}
-.logo:hover {
-  transform: scale(1.05);
-}
-
-header h1 {
-  color: #00ffff;
-  font-size: 2.2rem;
-  text-shadow: 0 0 15px #00ffff;
-  letter-spacing: 1px;
-}
-
-header p {
-  color: #9f9f9f;
-  margin-top: 0.25rem;
-  font-size: 1rem;
-}
-
-/* ===== Navigation ===== */
-nav {
-  margin-top: 1rem;
-}
-nav a {
-  margin: 0 1rem;
-  color: #9f9f9f;
-  text-decoration: none;
-  position: relative;
-  transition: color 0.3s, text-shadow 0.3s;
-}
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0%;
-  height: 2px;
-  background-color: #00ffff;
-  transition: width 0.4s;
-}
-nav a:hover, nav a.active {
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff;
-}
-nav a:hover::after, nav a.active::after {
-  width: 100%;
-}
-
-/* ===== Section Layout ===== */
-section {
-  padding: 3.5rem 1.5rem;
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
-
-h2 {
-  color: #00ffff;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 10px #00ffff;
-}
-
-p {
-  color: #cfcfcf;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-/* ===== Services ===== */
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.service-card {
-  background: #111;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #00ffff20;
-  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
-  position: relative;
-  overflow: hidden;
-}
-.service-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 0 25px #00ffff80;
-  background: #0e0e0e;
-}
-.service-card h3 {
-  color: #00ffff;
-  margin-bottom: 1rem;
-}
-
-/* ===== Contact Form ===== */
-form {
-  margin-top: 2rem;
+/* ===== Landing Page Layout ===== */
+.landing {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  width: 100%;
-  max-width: 500px;
-  margin-inline: auto;
-}
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  background: #0a0a0a;
-  border: 1px solid #00ffff40;
-  border-radius: 6px;
-  color: #cfcfcf;
-  font-size: 1rem;
-  outline: none;
-  transition: all 0.3s ease;
-}
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: #00ffff;
-  box-shadow: 0 0 15px #00ffff80;
-}
-button {
-  background: #00ffff20;
-  border: 1px solid #00ffff60;
-  color: #00ffff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  box-shadow: 0 0 10px #00ffff30;
-}
-button:hover {
-  background: #00ffff30;
-  box-shadow: 0 0 25px #00ffff70;
-  transform: translateY(-2px);
-}
-
-/* ===== Footer ===== */
-footer {
+  justify-content: center;
+  height: 100vh;
   text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  color: #666;
-  border-top: 1px solid #111;
-  background: #0b0b0b;
   position: relative;
   z-index: 2;
-  box-shadow: inset 0 0 20px #00ffff15;
 }
 
-/* ===== Fade-in Animation ===== */
-[data-animate] {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 1.2s ease;
+.landing-logo {
+  width: 180px;
+  filter: drop-shadow(0 0 25px #00ffffcc);
+  margin-bottom: 1rem;
+  transition: transform 0.4s ease;
 }
-[data-animate].visible {
-  opacity: 1;
-  transform: translateY(0);
+.landing-logo:hover {
+  transform: scale(1.05);
+}
+
+.landing-title {
+  color: #00ffff;
+  font-size: 2.5rem;
+  text-shadow: 0 0 20px #00ffff;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.5rem;
+}
+
+.landing-sub {
+  color: #9f9f9f;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+}
+
+.landing-nav a {
+  margin: 0 1.5rem;
+  color: #00ffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.landing-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #00ffff;
+  transition: width 0.3s ease;
+}
+.landing-nav a:hover::after {
+  width: 100%;
+}
+.landing-nav a:hover {
+  text-shadow: 0 0 10px #00ffff;
 }
