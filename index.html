@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Neural Nexus</title>
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
   <style>
     body {
       margin: 0;
@@ -17,14 +18,23 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 50px;
+      padding: 10px 40px;
       border-bottom: 2px solid #00e0ff;
     }
 
+    .logo {
+      height: 45px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
     header h1 {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       color: #00e0ff;
       margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     nav a {
@@ -41,30 +51,43 @@
 
     .hero {
       text-align: center;
-      padding: 120px 20px;
+      padding: 100px 20px 80px;
       background: linear-gradient(135deg, #121212, #0a0a0a);
+    }
+
+    .hero img.emblem {
+      width: 160px;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 25px #00e0ff);
+      animation: pulse 3s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { filter: drop-shadow(0 0 25px #00e0ff); }
+      50% { filter: drop-shadow(0 0 45px #00e0ff); }
     }
 
     .hero h2 {
       color: #00e0ff;
       font-size: 2.5rem;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       max-width: 700px;
       margin: 0 auto 40px;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     .btn {
       background-color: #00e0ff;
       color: #000;
       padding: 10px 25px;
-      border-radius: 5px;
+      border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
+      transition: background-color 0.3s;
     }
 
     .btn:hover {
@@ -75,7 +98,7 @@
       text-align: center;
       padding: 20px;
       border-top: 1px solid #222;
-      margin-top: 50px;
+      margin-top: 40px;
       font-size: 0.9rem;
       color: #999;
     }
@@ -84,7 +107,10 @@
 
 <body>
   <header>
-    <h1>Neural Nexus</h1>
+    <h1>
+      <img src="assets/images/neuralnexus-logo.png" alt="Neural Nexus logo" class="logo">
+      Neural Nexus
+    </h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -94,20 +120,16 @@
   </header>
 
   <section class="hero">
+    <img src="assets/images/neuralnexus-emblem.png" alt="Neural Nexus emblem" class="emblem">
     <h2>Connecting Minds and Machines</h2>
-    <p>Welcome to Neural Nexus — a digital frontier focused on exploring artificial intelligence, automation, and the evolving relationship between human creativity and machine precision.</p>
+    <p>Welcome to Neural Nexus — a digital frontier exploring artificial intelligence, automation, and the evolving relationship between human creativity and machine precision.</p>
     <a class="btn" href="about.html">Learn More</a>
   </section>
 
   <footer>
-    <p>© 2025 Neural Nexus. All rights reserved.</p>
+    <p>© 2025 Neural Nexus | Hallmark University Web Design Project</p>
   </footer>
 
-
-
+  <!-- rebuild v6 -->
 </body>
-  <!-- rebuild v5 -->
-
 </html>
-
-
