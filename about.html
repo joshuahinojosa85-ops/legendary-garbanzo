@@ -3,95 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About - Neural Nexus</title>
-
-  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-  <meta property="og:image" content="assets/images/neuralnexus-emblem.png">
-  <meta name="description" content="Learn about Neural Nexus — the fusion of human intellect and machine learning.">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background-color: #0e0e0e;
-      color: #e0e0e0;
-    }
-
-    header {
-      background-color: #111;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 50px;
-      border-bottom: 2px solid #00e0ff;
-    }
-
-    .logo {
-      height: 45px;
-      width: auto;
-    }
-
-    nav a {
-      color: #e0e0e0;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #00e0ff;
-    }
-
-    .content {
-      max-width: 800px;
-      margin: 100px auto;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h2 {
-      color: #00e0ff;
-      margin-bottom: 20px;
-      font-size: 2rem;
-    }
-
-    p {
-      line-height: 1.6;
-      font-size: 1.1rem;
-      color: #ccc;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      border-top: 1px solid #222;
-      margin-top: 50px;
-      font-size: 0.9rem;
-      color: #999;
-    }
-  </style>
+  <title>About | Neural Nexus Systems</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
   <header>
-    <img src="assets/images/neuralnexus-logo.png" alt="Neural Nexus Logo" class="logo">
+    <img src="assets/images/neuralnexus-logo.png" alt="Neural Nexus Logo" />
+    <h1>About Neural Nexus</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="index.html#services">Services</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="about.html" class="active">About</a>
     </nav>
   </header>
 
-  <div class="content">
-    <h2>About Neural Nexus</h2>
-    <p>Neural Nexus was founded as a digital initiative to merge the boundaries of human ingenuity and machine logic. Our mission is to build reliable, secure, and innovative systems that reflect the potential of artificial intelligence and computing as partners in progress.</p>
-    <p>From cybersecurity frameworks to custom hardware builds, we focus on precision, creativity, and efficiency — connecting minds and machines to unlock the future.</p>
-  </div>
+  <section class="about" data-animate>
+    <h2>Our Mission</h2>
+    <p>Neural Nexus was founded on the belief that technology should serve as a guardian, not a gamble. We design systems to think smarter, defend harder, and perform longer.</p>
+  </section>
+
+  <section class="team" data-animate>
+    <h2>Core Systems Architects</h2>
+    <div class="team-grid">
+      <div class="member">
+        <h3>Joshua H.</h3>
+        <p>Lead Engineer & Project Overseer</p>
+      </div>
+      <div class="member">
+        <h3>Geoffery</h3>
+        <p>Digital Operations Butler — Manages automation and documentation.</p>
+      </div>
+      <div class="member">
+        <h3>Arch-Magos</h3>
+        <p>Chief Data-Priest — Oversees logic purity, network rituals, and code sanctity.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="motto" data-animate>
+    <blockquote>
+      “In circuits we trust — through data we ascend.”  
+      <span>— The Neural Nexus Codex</span>
+    </blockquote>
+  </section>
 
   <footer>
-    <p>© 2025 Neural Nexus. All rights reserved.</p>
+    <p>&copy; 2025 Neural Nexus Systems | Forged in Code, Tempered by Firewalls</p>
   </footer>
+
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
