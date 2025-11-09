@@ -9,6 +9,7 @@ const observer = new IntersectionObserver(entries => {
 });
 items.forEach(item => observer.observe(item));
 
+
 /* ===== Cursor Glow Trail (default: ON) ===== */
 let trailEnabled = true;
 
