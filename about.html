@@ -3,31 +3,95 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Neural Nexus</title>
+  <title>About - Neural Nexus</title>
+
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <meta property="og:image" content="assets/images/neuralnexus-emblem.png">
+  <meta name="description" content="Learn about Neural Nexus — the fusion of human intellect and machine learning.">
+
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #f0f0f0;
       margin: 0;
-      padding: 40px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #0e0e0e;
+      color: #e0e0e0;
     }
-    h1 {
-      color: #0ff1ce;
+
+    header {
+      background-color: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      border-bottom: 2px solid #00e0ff;
     }
-    a {
-      color: #0ff1ce;
+
+    .logo {
+      height: 45px;
+      width: auto;
+    }
+
+    nav a {
+      color: #e0e0e0;
       text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+      transition: color 0.3s ease;
     }
-    a:hover {
-      text-decoration: underline;
+
+    nav a:hover {
+      color: #00e0ff;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 100px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #00e0ff;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #222;
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #999;
     }
   </style>
 </head>
+
 <body>
-  <h1>About Neural Nexus</h1>
-  <p>Neural Nexus is a forward-thinking tech initiative focused on artificial intelligence, data systems, and human-machine collaboration. Our goal is to bridge the gap between human creativity and computational precision through intelligent design and innovation.</p>
-  <p>We aim to make technology more intuitive, adaptive, and accessible for all users while supporting research in automation, analytics, and digital security.</p>
-  <p><a href="index.html">Return to Home</a></p>
+  <header>
+    <img src="assets/images/neuralnexus-logo.png" alt="Neural Nexus Logo" class="logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="content">
+    <h2>About Neural Nexus</h2>
+    <p>Neural Nexus was founded as a digital initiative to merge the boundaries of human ingenuity and machine logic. Our mission is to build reliable, secure, and innovative systems that reflect the potential of artificial intelligence and computing as partners in progress.</p>
+    <p>From cybersecurity frameworks to custom hardware builds, we focus on precision, creativity, and efficiency — connecting minds and machines to unlock the future.</p>
+  </div>
+
+  <footer>
+    <p>© 2025 Neural Nexus. All rights reserved.</p>
+  </footer>
 </body>
 </html>
