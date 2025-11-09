@@ -1,40 +1,31 @@
-// Fade-in scroll animation
-const items = document.querySelectorAll('[data-animate]');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-});
-items.forEach(item => observer.observe(item));
-
-// Optional cursor glow effect
+/* ===== Dynamic Pulse Trail ===== */
 document.addEventListener('mousemove', e => {
-  const glow = document.createElement('div');
-  glow.className = 'cursor-glow';
-  glow.style.left = e.pageX + 'px';
-  glow.style.top = e.pageY + 'px';
-  document.body.appendChild(glow);
-  setTimeout(() => glow.remove(), 500);
+  const pulse = document.createElement('div');
+  pulse.className = 'pulse-trace';
+  pulse.style.left = e.pageX + 'px';
+  pulse.style.top = e.pageY + 'px';
+  document.body.appendChild(pulse);
+  setTimeout(() => pulse.remove(), 700); // remove after fade
 });
 
-// Cursor-glow styling
-const style = document.createElement('style');
-style.innerHTML = `
-  .cursor-glow {
+/* ===== Trail Styling (auto-injected CSS) ===== */
+const pulseStyle = document.createElement('style');
+pulseStyle.innerHTML = `
+  .pulse-trace {
     position: absolute;
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background: rgba(0,255,255,0.4);
+    background: rgba(0,255,255,0.6);
     pointer-events: none;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 20px rgba(0,255,255,0.6);
-    animation: fadeout 0.5s forwards;
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 20px rgba(0,255,255,0.8);
+    animation: pulseFade 0.7s ease-out forwards;
+    z-index: 1000;
   }
-  @keyframes fadeout {
-    to { opacity: 0; transform: translate(-50%, -50%) scale(2); }
+  @keyframes pulseFade {
+    0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(2.5); }
   }
 `;
-document.head.appendChild(style);
+document.head.appendChild(pulseStyle);
