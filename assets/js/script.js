@@ -24,7 +24,7 @@ function createPulse(e) {
 
 document.addEventListener('mousemove', createPulse);
 
-/* ===== Trail Styling ===== */
+/* ===== Dynamic Styling ===== */
 const pulseStyle = document.createElement('style');
 pulseStyle.innerHTML = `
   .pulse-trace {
@@ -35,9 +35,4 @@ pulseStyle.innerHTML = `
     background: rgba(0,255,255,0.6);
     pointer-events: none;
     transform: translate(-50%, -50%) scale(1);
-    box-shadow: 0 0 20px rgba(0,255,255,0.8);
-    animation: pulseFade 0.7s ease-out forwards;
-    z-index: 1000;
-  }
-  @keyframes pulseFade {
-    0% { opacity: 1; transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0
