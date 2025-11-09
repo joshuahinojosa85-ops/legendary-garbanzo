@@ -239,6 +239,8 @@ footer p {
 [data-animate].visible {
   opacity: 1;
   transform: translateY(0);
+}
+
   /* ===== Contact Form ===== */
 form {
   margin-top: 2rem;
