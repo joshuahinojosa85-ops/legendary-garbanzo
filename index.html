@@ -11,102 +11,23 @@
   <script>
   (function() {
     const canvas = document.createElement("canvas");
-    canvas.width = 64;
-    canvas.height = 64;
+    canvas.width = 64; canvas.height = 64;
     const ctx = canvas.getContext("2d");
-    ctx.fillStyle = "#000";
-    ctx.fillRect(0, 0, 64, 64);
-    const gradient = ctx.createRadialGradient(32, 32, 5, 32, 32, 20);
-    gradient.addColorStop(0, "#00ffff");
-    gradient.addColorStop(1, "rgba(0,255,255,0)");
-    ctx.fillStyle = gradient;
-    ctx.beginPath();
-    ctx.arc(32, 32, 20, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.strokeStyle = "#00ffff";
-    ctx.lineWidth = 2;
-    ctx.shadowColor = "#00ffff";
-    ctx.shadowBlur = 15;
-    ctx.beginPath();
-    ctx.arc(32, 32, 22, 0, Math.PI * 2);
-    ctx.stroke();
-    const link = document.createElement("link");
-    link.rel = "icon";
-    link.href = canvas.toDataURL("image/png");
-    document.head.appendChild(link);
+    ctx.fillStyle = "#000"; ctx.fillRect(0, 0, 64, 64);
+    const g = ctx.createRadialGradient(32,32,5,32,32,20);
+    g.addColorStop(0,"#00ffff"); g.addColorStop(1,"rgba(0,255,255,0)");
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(32,32,20,0,Math.PI*2); ctx.fill();
+    ctx.strokeStyle="#00ffff"; ctx.lineWidth=2; ctx.shadowColor="#00ffff"; ctx.shadowBlur=15;
+    ctx.beginPath(); ctx.arc(32,32,22,0,Math.PI*2); ctx.stroke();
+    const link=document.createElement("link");
+    link.rel="icon"; link.href=canvas.toDataURL("image/png"); document.head.appendChild(link);
   })();
   </script>
 </head>
 
 <body>
   <header>
-    <img src="assets/images/neuralnexus-logo.png" alt="Neural Nexus Logo" class="logo">
-
+    <img src="assets/images/neuralnexus-logo.png" alt="Neural Nexus Logo" class="logo" />
     <h1>Neural Nexus Systems</h1>
     <p>Cyber Defense | Precision Engineering | AI Integration</p>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <section class="hero" data-animate>
-    <h2>Empowering the Next Generation of Digital Guardians</h2>
-    <p>We build, secure, and optimize systems that perform beyond expectations — from custom machines to hardened networks.</p>
- .logo {
-  width: 140px;
-  filter: drop-shadow(0 0 15px #00ffffcc);
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease;
-}
-.logo:hover {
-  transform: scale(1.05);
-}
-
-  </section>
-
-  <section id="services" class="services" data-animate>
-    <h2>Our Services</h2>
-    <div class="service-grid">
-      <div class="service-card">
-        <h3>Cybersecurity Enhancements</h3>
-        <p>Vulnerability detection, endpoint protection, and advanced security architecture built to withstand modern threats.</p>
-      </div>
-      <div class="service-card">
-        <h3>Computer Builds</h3>
-        <p>Custom systems tuned for gaming, design, and enterprise workloads. Built, tested, and optimized by hand.</p>
-      </div>
-      <div class="service-card">
-        <h3>Repairs & Diagnostics</h3>
-        <p>From failed hardware to corrupted OS layers — we resurrect systems with precision and data integrity intact.</p>
-      </div>
-      <div class="service-card">
-        <h3>Network Optimization</h3>
-        <p>Routing, VLANs, and bandwidth calibration for seamless connectivity and performance under load.</p>
-      </div>
-      <div class="service-card">
-        <h3>Data Recovery</h3>
-        <p>We recover the unrecoverable. Bit-level reconstruction and encrypted data rescue protocols.</p>
-      </div>
-      <div class="service-card">
-        <h3>System Overhauls</h3>
-        <p>Full modernization of aging systems — thermal upgrades, firmware calibration, and OS streamlining.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact" data-animate>
-    <h2>Contact Neural Nexus</h2>
-    <p>Email: <a href="mailto:contact@neuralnexus.tech">contact@neuralnexus.tech</a></p>
-    <p>Phone: (555) 982-1147</p>
-    <p>Address: 404 Null Byte Ave, Sector 7, San Antonio, TX</p>
-    <p>Support Portal: <a href="#">nexus.help/ghost-ticket</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Neural Nexus Systems | Unauthorized Access Detected... Just Kidding.</p>
-  </footer>
-</body>
-</html>
+    <na
