@@ -1,10 +1,14 @@
+/* ===== Neural Nexus Systems | Dark-Tech Aesthetic ===== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
 }
 
+/* ===== Base ===== */
 body {
   background: radial-gradient(circle at top, #050505 0%, #000 100%);
   color: #cfcfcf;
@@ -12,7 +16,7 @@ body {
   position: relative;
 }
 
-/* Animated circuitry grid */
+/* ===== Animated background grid ===== */
 body::before {
   content: "";
   position: fixed;
@@ -22,7 +26,7 @@ body::before {
   height: 100%;
   background: repeating-linear-gradient(90deg, rgba(0,255,255,0.05) 0px, rgba(0,255,255,0.05) 1px, transparent 1px, transparent 80px),
               repeating-linear-gradient(0deg, rgba(0,255,255,0.05) 0px, rgba(0,255,255,0.05) 1px, transparent 1px, transparent 80px);
-  animation: gridmove 20s linear infinite;
+  animation: gridmove 25s linear infinite;
   z-index: 0;
 }
 @keyframes gridmove {
@@ -30,41 +34,73 @@ body::before {
   to { background-position: 80px 80px, 80px 80px; }
 }
 
+/* ===== Header ===== */
 header {
   text-align: center;
   padding: 2rem 1rem;
   background: linear-gradient(90deg, #0b0b0b, #101010);
-  box-shadow: 0 0 10px #00ffff20;
+  box-shadow: 0 0 20px #00ffff20;
   position: relative;
   z-index: 2;
+  border-bottom: 2px solid #00ffff30;
+  animation: borderPulse 6s infinite alternate;
+}
+@keyframes borderPulse {
+  0% { border-color: #00ffff10; box-shadow: 0 0 10px #00ffff20; }
+  100% { border-color: #00ffff80; box-shadow: 0 0 25px #00ffff50; }
 }
 
 header img {
   width: 120px;
   margin-bottom: 1rem;
+  filter: drop-shadow(0 0 15px #00ffff80);
 }
 
 header h1 {
   color: #00ffff;
   font-size: 2.2rem;
-  text-shadow: 0 0 10px #00ffff;
+  text-shadow: 0 0 15px #00ffff;
+  letter-spacing: 1px;
 }
 
-header nav {
+header p {
+  color: #9f9f9f;
+  margin-top: 0.25rem;
+  font-size: 1rem;
+}
+
+/* ===== Navigation ===== */
+nav {
   margin-top: 1rem;
 }
-header nav a {
+nav a {
   margin: 0 1rem;
   color: #9f9f9f;
   text-decoration: none;
-  transition: color 0.3s;
+  position: relative;
+  transition: color 0.3s, text-shadow 0.3s;
 }
-header nav a:hover, header nav a.active {
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: #00ffff;
+  transition: width 0.4s;
+}
+nav a:hover, nav a.active {
   color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+nav a:hover::after, nav a.active::after {
+  width: 100%;
 }
 
+/* ===== Section Layout ===== */
 section {
-  padding: 3rem 1.5rem;
+  padding: 3.5rem 1.5rem;
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
@@ -72,6 +108,13 @@ section {
   z-index: 2;
 }
 
+h2 {
+  color: #00ffff;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+/* ===== Services ===== */
 .service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -84,17 +127,35 @@ section {
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 0 10px #00ffff20;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,255,255,0.1) 0%, transparent 60%);
+  transform: scale(0);
+  transition: transform 0.5s ease;
+}
+.service-card:hover::before {
+  transform: scale(1);
 }
 .service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 20px #00ffff80;
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 25px #00ffff80;
+  background: #0e0e0e;
 }
 .service-card h3 {
   color: #00ffff;
   margin-bottom: 1rem;
 }
 
+/* ===== Team Section ===== */
 .team-grid {
   display: flex;
   flex-wrap: wrap;
@@ -108,18 +169,25 @@ section {
   border-radius: 10px;
   box-shadow: 0 0 10px #00ffff30;
   width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.member:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px #00ffff80;
 }
 .member h3 {
   color: #00ffff;
   margin-bottom: 0.5rem;
 }
 
+/* ===== Blockquote / Motto ===== */
 blockquote {
   font-style: italic;
   color: #a0a0a0;
   margin-top: 3rem;
   border-left: 4px solid #00ffff;
   padding-left: 1rem;
+  text-shadow: 0 0 6px #00ffff40;
 }
 blockquote span {
   display: block;
@@ -127,6 +195,17 @@ blockquote span {
   margin-top: 0.5rem;
 }
 
+/* ===== Contact ===== */
+.contact a {
+  color: #00ffff;
+  text-decoration: none;
+  transition: text-shadow 0.3s;
+}
+.contact a:hover {
+  text-shadow: 0 0 10px #00ffff;
+}
+
+/* ===== Footer ===== */
 footer {
   text-align: center;
   padding: 1rem;
@@ -136,14 +215,27 @@ footer {
   background: #0b0b0b;
   position: relative;
   z-index: 2;
+  box-shadow: inset 0 0 20px #00ffff15;
+}
+footer p {
+  color: #9f9f9f;
 }
 
+/* ===== Animation triggers ===== */
 [data-animate] {
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.8s ease;
+  transition: all 1s ease;
 }
 [data-animate].visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ===== Hover Glows & Focus ===== */
+a, button, .service-card {
+  outline: none;
+}
+a:focus, button:focus, .service-card:focus {
+  box-shadow: 0 0 12px #00ffff;
 }
