@@ -1,14 +1,30 @@
-/* ===== Dynamic Pulse Trail ===== */
-document.addEventListener('mousemove', e => {
+/* ===== Fade-in scroll animation ===== */
+const items = document.querySelectorAll('[data-animate]');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+});
+items.forEach(item => observer.observe(item));
+
+/* ===== Cursor Glow Trail (default: ON) ===== */
+let trailEnabled = true;
+
+function createPulse(e) {
+  if (!trailEnabled) return;
   const pulse = document.createElement('div');
   pulse.className = 'pulse-trace';
   pulse.style.left = e.pageX + 'px';
   pulse.style.top = e.pageY + 'px';
   document.body.appendChild(pulse);
-  setTimeout(() => pulse.remove(), 700); // remove after fade
-});
+  setTimeout(() => pulse.remove(), 700);
+}
 
-/* ===== Trail Styling (auto-injected CSS) ===== */
+document.addEventListener('mousemove', createPulse);
+
+/* ===== Trail Styling ===== */
 const pulseStyle = document.createElement('style');
 pulseStyle.innerHTML = `
   .pulse-trace {
@@ -24,8 +40,4 @@ pulseStyle.innerHTML = `
     z-index: 1000;
   }
   @keyframes pulseFade {
-    0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-    100% { opacity: 0; transform: translate(-50%, -50%) scale(2.5); }
-  }
-`;
-document.head.appendChild(pulseStyle);
+    0% { opacity: 1; transform: translate(-50%, -50%) scale(1);
