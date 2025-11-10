@@ -126,3 +126,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+// ===== Neural Nexus Page Fade Transition =====
+document.addEventListener("DOMContentLoaded", () => {
+  // Trigger fade-in after load
+  document.body.classList.add("fade-in");
+
+  // Intercept link clicks for fade-out effect
+  const links = document.querySelectorAll("a[href]");
+
+  links.forEach(link => {
+    const url = new URL(link.href, window.location.origin);
+
+    // Only trigger fade if staying within site
+    if (url.origin === window.location.origin) {
+      link.addEventListener("click", e => {
+        // Allow middle-click or ctrl-click to open new tab normally
+        if (e.ctrlKey || e.metaKey || e.button !== 0) return;
+
+        e.preventDefault();
+        document.body.classList.remove("fade-in");
+        document.body.style.opacity = "0";
+
+        // Delay navigation until fade-out finishes
+        setTimeout(() => {
+          window.location.href = link.href;
+        }, 400);
+      });
+    }
+  });
+});
