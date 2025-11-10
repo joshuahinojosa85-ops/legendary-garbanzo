@@ -1,7 +1,11 @@
-// ===== Neural Nexus Page Fade + Data-Link Flash =====
+// ===== Neural Nexus Page Fade + Alternating Data-Link Flash =====
 document.addEventListener("DOMContentLoaded", () => {
   const flash = document.querySelector(".data-link-flash");
   document.body.classList.add("fade-in");
+
+  // Remember last color state using localStorage (optional)
+  const lastColor = localStorage.getItem("nn_flash_color") || "cyan";
+  let nextColor = lastColor === "cyan" ? "violet" : "cyan";
 
   const links = document.querySelectorAll("a[href]");
 
@@ -11,6 +15,32 @@ document.addEventListener("DOMContentLoaded", () => {
       link.addEventListener("click", e => {
         if (e.ctrlKey || e.metaKey || e.button !== 0) return;
         e.preventDefault();
+
+        // Alternate flash color
+        if (flash) {
+          flash.classList.remove("active", "cyan", "violet");
+          flash.classList.add(nextColor);
+          void flash.offsetWidth; // restart animation
+          flash.classList.add("active");
+        }
+
+        // Fade out body
+        document.body.classList.remove("fade-in");
+        document.body.style.opacity = "0";
+
+        // Save next color state
+        localStorage.setItem("nn_flash_color", nextColor);
+        nextColor = nextColor === "cyan" ? "violet" : "cyan";
+
+        // Navigate after flash
+        setTimeout(() => {
+          window.location.href = link.href;
+        }, 550);
+      });
+    }
+  });
+});
+
 
         // Trigger flash sweep
         if (flash) {
