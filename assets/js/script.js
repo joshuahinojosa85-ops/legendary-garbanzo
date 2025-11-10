@@ -1,12 +1,35 @@
-/* ===== Fade-in Scroll Animation ===== */
+// ===== Neural Nexus Page Fade + Data-Link Flash =====
 document.addEventListener("DOMContentLoaded", () => {
-  const items = document.querySelectorAll("[data-animate]");
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add("visible");
-    });
-  }, { threshold: 0.1 });
-  items.forEach(item => observer.observe(item));
+  const flash = document.querySelector(".data-link-flash");
+  document.body.classList.add("fade-in");
+
+  const links = document.querySelectorAll("a[href]");
+
+  links.forEach(link => {
+    const url = new URL(link.href, window.location.origin);
+    if (url.origin === window.location.origin) {
+      link.addEventListener("click", e => {
+        if (e.ctrlKey || e.metaKey || e.button !== 0) return;
+        e.preventDefault();
+
+        // Trigger flash sweep
+        if (flash) {
+          flash.classList.remove("active");
+          void flash.offsetWidth; // restart animation
+          flash.classList.add("active");
+        }
+
+        // Fade out
+        document.body.classList.remove("fade-in");
+        document.body.style.opacity = "0";
+
+        // Navigate after flash animation
+        setTimeout(() => {
+          window.location.href = link.href;
+        }, 500);
+      });
+    }
+  });
 });
 
 /* ===== Cursor Glow Trail (Default: ON) ===== */
