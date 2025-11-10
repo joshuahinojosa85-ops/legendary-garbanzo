@@ -177,4 +177,7 @@ body::before {
 
 .service-grid {
   display: grid;
-  grid-template-colum
+  grid-template-columns: 1fr;
+  }
+}
+
