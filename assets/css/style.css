@@ -70,6 +70,111 @@
 .hero-link:hover {
   opacity: 1;
 }
+.site-footer {
+  margin-top: 3rem;
+  padding: 2.5rem 1.5rem 1.5rem;
+  background: radial-gradient(circle at top, #061622 0, #020712 45%, #000 100%);
+  border-top: 1px solid rgba(0, 255, 255, 0.25);
+  box-shadow: 0 -0.5rem 1.5rem rgba(0, 0, 0, 0.8);
+  color: #e0faff;
+}
+
+.footer-inner {
+  max-width: 1000px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.footer-logo {
+  font-size: 1.4rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.4rem;
+  font-size: 0.9rem;
+}
+
+.footer-nav a {
+  position: relative;
+  text-decoration: none;
+  color: #a8f6ff;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  padding-bottom: 0.2rem;
+  transition: color 0.2s ease, text-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* Neon underline + glow on hover */
+.footer-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, #0ff, #7af2ff);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+  transition: width 0.25s ease;
+}
+
+.footer-nav a:hover::after,
+.footer-nav a:focus-visible::after {
+  width: 100%;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus-visible {
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(0, 255, 255, 0.9),
+               0 0 12px rgba(0, 170, 255, 0.7);
+  transform: translateY(-1px);
+}
+
+/* Slight extra emphasis for the References link */
+.footer-ref-link {
+  letter-spacing: 0.16em;
+}
+
+.footer-bottom {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(0, 255, 255, 0.15);
+  padding-top: 0.9rem;
+  text-align: center;
+}
+
+.footer-credits {
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-nav {
+    justify-content: flex-start;
+  }
+}
+
 
 
 body {
