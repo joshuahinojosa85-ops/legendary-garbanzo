@@ -448,7 +448,45 @@ body::before {
   box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
   position: relative;
   z-index: 2;
+}/* ===== Contact Page Centering ===== */
+.contact-page {
+  max-width: 900px;
+  margin: 4rem auto;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(0, 255, 255, 0.03);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+  position: relative;
+  z-index: 2;
 }
+
+.contact-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.contact-info,
+.contact-form {
+  text-align: left;
+}
+
+@media (max-width: 750px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .contact-info,
+  .contact-form {
+    text-align: center;
+  }
+}
+
+
 
 .contact-page h1,
 .contact-page h2,
