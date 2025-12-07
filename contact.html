@@ -29,53 +29,55 @@
     </nav>
   </header>
 
-  <!-- Contact Section -->
-  <main class="contact" id="contact" data-animate>
-    <h2>Contact Neural Nexus Systems</h2>
-    <p>
-      Neural Nexus operates across distributed nodes.  
-      Communications are routed through encrypted relay channels for security and monitoring.  
-      Use the fields below to initiate contact with the Core.
-    </p>
+  <!-- CONTACT PAGE CONTAINER (this is the correct placement) -->
+  <section class="contact-page">
+    <main class="contact" id="contact" data-animate>
+      <h2>Contact Neural Nexus Systems</h2>
+      <p>
+        Neural Nexus operates across distributed nodes.<br>
+        Communications are routed through encrypted relay channels for maximum security.<br>
+        Use the fields below to initiate contact with the Core.
+      </p>
 
-    <div class="contact-grid">
-      <!-- Contact Info -->
-      <div class="contact-info">
-        <h3>Network Relay Information</h3>
-        <p><strong>Address:</strong> 404 Quantum Drive, Sector 7, Datastream City</p>
-        <p><strong>Phone:</strong> (000) 123-4567</p>
-        <p><strong>Email:</strong> core@neural-nexus.sys</p>
-        <p><strong>Operation Hours:</strong> 09:00-18:00 CST, Mon-Fri</p>
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <h3>Network Relay Information</h3>
+          <p><strong>Address:</strong> 404 Quantum Drive, Sector 7, Datastream City</p>
+          <p><strong>Phone:</strong> (000) 123-4567</p>
+          <p><strong>Email:</strong> core@neural-nexus.sys</p>
+          <p><strong>Operation Hours:</strong> 09:00–18:00 CST, Mon–Fri</p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <form id="contactForm" aria-label="Contact Form">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" rows="5" placeholder="Type your message..." required></textarea>
+            </div>
+
+            <button type="submit" aria-label="Send Message">Transmit Message</button>
+          </form>
+        </div>
       </div>
 
-      <!-- Contact Form -->
-      <div class="contact-form">
-        <form id="contactForm" aria-label="Contact Form">
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required />
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required />
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" placeholder="Type your message..." required></textarea>
-          </div>
-
-          <button type="submit" aria-label="Send Message">Transmit Message</button>
-        </form>
+      <!-- Return Button -->
+      <div class="main-node-return">
+        <a href="./" class="main-node-btn">Return to Main Node</a>
       </div>
-    </div>
-
-    <!-- Return Button -->
-    <div class="main-node-return">
-      <a href="./" class="main-node-btn">Return to Main Node</a>
-    </div>
-  </main>
+    </main>
+  </section>
 
   <!-- Basic Form Handler -->
   <script>
@@ -88,5 +90,6 @@
       });
     });
   </script>
+
 </body>
 </html>
