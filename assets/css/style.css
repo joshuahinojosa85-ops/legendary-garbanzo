@@ -418,3 +418,21 @@ body::before {
   background: linear-gradient(90deg, transparent, #b900ff, transparent);
   box-shadow: 0 0 25px #b900ff80;
 }
+/* ===== Contact Page Centering ===== */
+.contact-page {
+  max-width: 700px;
+  margin: 4rem auto;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(0, 255, 255, 0.03);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+}
+
+.contact-page h1,
+.contact-page h2,
+.contact-page p {
+  text-align: center;
+}
+
