@@ -7,6 +7,70 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
 }
+.hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background: radial-gradient(circle at top, #0ff 0, #020712 55%, #000 100%);
+  color: #f5f5f5;
+  text-align: center;
+}
+
+.hero-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 2.4rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.hero-mission {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.hero-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid #0ff;
+  background: rgba(0, 255, 255, 0.12);
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.hero-button:hover {
+  background: rgba(0, 255, 255, 0.3);
+}
+
+.hero-link {
+  align-self: center;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #0ff;
+  opacity: 0.85;
+}
+
+.hero-link:hover {
+  opacity: 1;
+}
+
 
 body {
   background: radial-gradient(circle at top, #050505 0%, #000 100%);
