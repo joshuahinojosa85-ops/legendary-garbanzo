@@ -7,6 +7,8 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
 }
+
+/* ===== Hero Section ===== */
 .hero {
   min-height: 60vh;
   display: flex;
@@ -70,6 +72,8 @@
 .hero-link:hover {
   opacity: 1;
 }
+
+/* ===== Footer ===== */
 .site-footer {
   margin-top: 3rem;
   padding: 2.5rem 1.5rem 1.5rem;
@@ -163,7 +167,7 @@
   opacity: 0.75;
 }
 
-/* Responsive adjustments */
+/* Responsive footer */
 @media (max-width: 700px) {
   .footer-inner {
     flex-direction: column;
@@ -175,16 +179,21 @@
   }
 }
 
-
-
+/* ===== Body + Background Grid ===== */
 body {
   background: radial-gradient(circle at top, #050505 0%, #000 100%);
   color: #cfcfcf;
   overflow-x: hidden;
   position: relative;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
 }
 
-/* ===== Animated Background Grid ===== */
+body.fade-in {
+  opacity: 1;
+}
+
+/* Animated Background Grid */
 body::before {
   content: "";
   position: fixed;
@@ -273,16 +282,29 @@ body::before {
 }
 
 /* ===== Navigation ===== */
+.landing-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.landing-nav li {
+  display: inline-block;
+  margin: 0 1.2rem;
+}
+
 .landing-nav a {
-  margin: 0 1.5rem;
+  margin: 0 0;
   color: #00ffff;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1rem;
   position: relative;
-  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  transition: all 0.3s ease, text-shadow 0.3s;
 }
+
 .landing-nav a::after {
   content: "";
   position: absolute;
@@ -293,11 +315,14 @@ body::before {
   background: #00ffff;
   transition: width 0.3s ease;
 }
+
 .landing-nav a:hover::after {
   width: 100%;
 }
-.landing-nav a:hover {
-  text-shadow: 0 0 10px #00ffff;
+
+.landing-nav a:hover,
+.landing-nav a:focus {
+  text-shadow: 0 0 12px #00ffff;
 }
 
 /* ===== About Page Styling ===== */
@@ -312,31 +337,6 @@ body::before {
   list-style: none;
   padding: 0;
   margin-top: 2rem;
-}
-/* Clean navigation list style */
-.landing-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.landing-nav li {
-  display: inline-block;
-  margin: 0 1.2rem;
-}
-
-.landing-nav a {
-  color: #00ffff;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 1px;
-  transition: text-shadow 0.3s;
-}
-
-.landing-nav a:hover,
-.landing-nav a:focus {
-  text-shadow: 0 0 12px #00ffff;
 }
 
 .about li {
@@ -372,18 +372,17 @@ body::before {
 .service-grid {
   display: grid;
   grid-template-columns: 1fr;
-  }
-}
-/* ===== Smooth Page Fade Transitions ===== */
-body {
-  opacity: 0;
-  transition: opacity 0.6s ease-in-out;
+  gap: 1.5rem;
 }
 
-body.fade-in {
-  opacity: 1;
+/* Responsive services grid */
+@media (min-width: 700px) {
+  .service-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
-/* ===== Neural Nexus Data-Link Flash (Cyan–Violet Alternation) ===== */
+
+/* ===== Neural Nexus Data-Link Flash ===== */
 .data-link-flash {
   position: fixed;
   top: 0;
@@ -419,9 +418,3 @@ body.fade-in {
   background: linear-gradient(90deg, transparent, #b900ff, transparent);
   box-shadow: 0 0 25px #b900ff80;
 }
-
-  0% { left: -100%; opacity: 0.3; }
-  40% { opacity: 1; }
-  100% { left: 100%; opacity: 0; }
-}
-
